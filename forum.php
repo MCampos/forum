@@ -83,13 +83,6 @@ class forum extends atk_controller {
 			$page = 1;
 		}
 		$postinfo =  $forum->postDataNew($urivar, $page);
-		//-----------------------------------------
-		//$from = 'system@atkcash.com'; // sender
-		//$subject = 'Post data';
-		//$test_data = print_r($postinfo,true);
-		//$message = 'Post Data:'.$test_data;
-		//mail("matt@atkcash.com",$subject,$message,"From: $from\n");
-		//-------------------------------------------
 		$catinfo =  $forum->catInfo($postinfo['post']['cat_id']);
 		if($forum->secure_check($catinfo['site_id'], $catinfo['access']) == 0) {
 			redirect('/forum');
